@@ -1,0 +1,37 @@
+.card {
+  width: 165px;
+  height: auto;
+  /* border: 1px solid var(--border); */
+  border-radius: 20px;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.card div {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  white-space: normal;
+}
+
+.card .cardTitle {
+  margin: 12px 0 4px 0;
+}
+
+.card .cardPrice {
+  font-weight: bold;
+  color: var(--price);
+  /* line-height: 2rem; */
+}

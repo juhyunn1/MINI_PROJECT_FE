@@ -1,0 +1,23 @@
+.checkIn {
+  width: 175px;
+  height: 175px;
+  background-color: var(--e-yellow);
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.btnWrap {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnSm {
+  width: 125px;
+  height: 125px;
+  background-color: var(--e-yellow);
+  border-radius: 20px;
+  margin: 0 10px;
+}

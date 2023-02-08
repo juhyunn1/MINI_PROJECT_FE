@@ -1,0 +1,25 @@
+.logo {
+  width: calc(100% - 30px);
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 125px;
+}
+
+.logo h1 {
+  display: none;
+}
+
+.menu {
+  height: 30px;
+}
+
+.menu ion-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--e-yellow);
+}
