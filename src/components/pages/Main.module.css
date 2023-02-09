@@ -1,7 +1,7 @@
 /* .checkIn {
   width: 175px;
   height: 175px;
-  background-color: var(--e-yellow);
+  background-color: var(--yellow);
   border-radius: 20px;
   margin: 0 auto;
 }
@@ -17,7 +17,7 @@
 .btnSm {
   width: 125px;
   height: 125px;
-  background-color: var(--e-yellow);
+  background-color: var(--yellow);
   border-radius: 20px;
   margin: 0 10px;
 } */
