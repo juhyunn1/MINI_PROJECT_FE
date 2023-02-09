@@ -3,11 +3,11 @@ import style from './ProductCard.module.css'
 
 function ProductCard({data}) {
   return (
-    <div className={style.card}>
+    <div className={style.productCard}>
       <div>
         <img src={data.thumbnail} alt={data.name}/>
-        <div className={style.cardTitle}>{data.name}</div>
-        <div className={style.cardPrice}>{data.price}원</div>
+        <div className={style.productCardTitle}>{data.name}</div>
+        <div className={style.productCardPrice}>{data.price}원</div>
       </div>
     </div>
   );

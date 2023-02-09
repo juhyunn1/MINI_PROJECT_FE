@@ -6,8 +6,12 @@
   align-items: center;
 }
 
+.logo > a {
+  height: 25px;
+}
+
 .logo img {
-  width: 125px;
+  height: 25px;
 }
 
 .logo h1 {

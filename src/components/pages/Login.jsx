@@ -1,42 +1,62 @@
-import React, { useState } from 'react';
-import style from "./Login.module.css"
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
+import { loginState } from '../../state/loginState';
+import { userInfo } from '../../state/userInfo';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
-  const handleEmail = (e) => {
-    setEmail(e.currentTarget.value);
-  }
+  const [temp, setTemp] = useState();
 
-  const handlePassword = (e) => {
-    setPassword(e.currentTarget.value);
-  }
+  const setLoginState = useSetRecoilState(loginState);
+  const setUserInfo = useSetRecoilState(userInfo);
+  
+  useEffect(() => {
+    axios.get('http://localhost:3001/users', { // email로 가입된 데이터 가져와서
+      params: {
+        email: email
+      }
+    })
+    .then(res => {
+      console.log(res);
+      if(res.data.length != 0) // 데이터가 있으면
+        setTemp(res.data[0]); // 해당 데이터 가져옴
+    })
+    .catch(err => console.log(err))
+  }, [email])
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(email, password);
-    // setIsLogin(true);
-    // setUserName(userNameRef.current.value);
-  }
+    console.log(email, password, temp);
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    console.log(email, password);
-    // setIsLogin(true);
-    // setUserName(userNameRef.current.value);
+    if(password == temp.password) {
+      alert('로그인에 성공하였습니다.');
+      setLoginState(true); // 로그인된 상태로 변경
+      setUserInfo({ // 사용자 정보 저장
+        id: temp.id,
+        name: temp.name,
+        email: temp.email,
+        password: temp.password
+      })
+      window.location.replace('/'); // 메인화면으로 이동
+    }
+    else
+      alert('로그인에 실패하였습니다.');
   }
 
   return (
     <div class='container'>
-      <form onSubmit={handleLogin} className={style.loginForm}>
-        <label>Email</label>
-        <input type='email' value={email} onChange={handleEmail}/>
-        <label>Password</label>
-        <input type='password' value={password} onChange={handlePassword}/>
-        <button onClick={handleLogin}>로그인</button>
-        <button onClick={handleSignIn}>회원가입</button>
+      <form>
+        <div>이메일</div>
+        <input type='email' value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
+
+        <div>비밀번호</div>
+        <input type='password' value={password} onChange={(e) => setPassword(e.currentTarget.value)}/>
+
+        <div onClick={handleLogin}>로그인</div>
+        <Link to='/join'><div>회원가입</div></Link>
       </form>
     </div>
 

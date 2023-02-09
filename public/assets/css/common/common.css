@@ -6,6 +6,7 @@ html, body {
 
 #root {
   height: 100%;
+  color: var(--font);
 }
 
 .container {
@@ -31,8 +32,33 @@ header {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  color: var(--font);
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.eventCard {
+  width: 100%;
+  height: var(--eventCardWrap-height);
+  line-height: var(--eventCardWrap-height);
+  position: absolute;
+  display: none;
+  transition: all 0.5s;
+}
+.now {
+  display: block;
+  transition: all 0.5s;
 }

@@ -1,3 +1,7 @@
 :root {
+  /* header */
   --header-height: 90px;
+
+  /* event */
+  --eventSlider-height: 50px
 }

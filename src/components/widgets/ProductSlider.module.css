@@ -1,10 +1,14 @@
-.cardWrap {
-  white-space: nowrap; 
+.productSlider {
   overflow: auto;
+  white-space: nowrap; 
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
 }
 
-.cardWrap::-webkit-scrollbar {
+.productSlider::-webkit-scrollbar {
   display: none;
+}
+
+.productSlider:last-child {
+  margin: 0;
 }

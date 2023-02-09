@@ -1,4 +1,4 @@
-.checkIn {
+/* .checkIn {
   width: 175px;
   height: 175px;
   background-color: var(--e-yellow);
@@ -20,4 +20,10 @@
   background-color: var(--e-yellow);
   border-radius: 20px;
   margin: 0 10px;
+} */
+
+.mainTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
