@@ -1,0 +1,58 @@
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination > li {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.pagination > li:first-child, .pagination > li:last-child {
+  display: none;
+}
+
+.pagination > li:nth-child(n+2):nth-child(-n+2), .pagination > li:nth-last-child(2) {
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.pagination > li:nth-child(n+2):nth-child(-n+2) {
+  background-image: url('../images/icon/arrowPrev.png');
+}
+
+.pagination > li:nth-child(n+2):nth-child(-n+2):active {
+  background-image: url('../images/icon/arrowPrevActive.png');
+}
+
+.pagination > li:nth-last-child(2) {
+  background-image: url('../images/icon/arrowNext.png');
+}
+
+.pagination > li:nth-last-child(2):active {
+  background-image: url('../images/icon/arrowNextActive.png');
+}
+
+.pagination >  li a {
+  text-decoration: none;
+  color: var(--font);
+}
+
+.pagination >  li.active a { /* 눌려져 있을 때 */
+  color: var(--yellow);
+}
+
+.pagination >  li a:hover, .pagination >  a.active {
+  color: var(--yellow);
+}

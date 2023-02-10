@@ -23,7 +23,7 @@ body {
   width: 100%;
   /* height: calc(100% - var(--header-height)); */
   height: 100%;
-  padding: 12px;
+  padding: 20px;
   box-sizing: border-box;
   /* display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@ header {
   box-sizing: border-box; /* width를 100% 유지, 패딩 포함 X */
   padding: 0 20px;
   /* border-bottom: 1px solid var(--border); */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,18 +61,4 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-
-.eventCard {
-  width: 100%;
-  height: var(--eventCardWrap-height);
-  line-height: var(--eventCardWrap-height);
-  position: absolute;
-  display: none;
-  transition: all 0.5s;
-}
-.now {
-  display: block;
-  transition: all 0.5s;
 }

@@ -2,3 +2,6 @@
 @import url(./common/color.css);
 @import url(./common/common.css);
 @import url(./common/size.css);
+
+@import url(./dotColor.css);
+@import url(./pagination.css);

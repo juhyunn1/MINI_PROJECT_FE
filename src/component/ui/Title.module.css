@@ -1,0 +1,20 @@
+.pageTitle {
+  font-size: 1.15rem;
+}
+
+.moreBtn {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.moreBtn span {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.moreBtn img {
+  width: 14px;
+  height: 14px;
+  margin-left: 5px;
+}

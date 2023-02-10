@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Title from '../ui/Title';
-import ProductCard from '../widgets/ProductCard';
-import styles from './ProductList.module.css'
-
-function Product() {
+import ProductCard from './ProductCard';
+import styles from './ProductSlider.module.css'
+function ProductSlider() {
   const [productData, setProductData] = useState();
 
   useEffect(() => {
@@ -17,18 +14,18 @@ function Product() {
     .catch(err => console.log(err))
   }, []);
 
+  // console.log(productData)
+
   return (
-    <div id={styles.productList} class='container'>
-      <Title title='전체상품'/>
+    <div className={styles.productSlider}>
       {
         productData && productData.map( data => (
-          <Link to={`./${data.id}`}>
-            <ProductCard key={data.id} data={data}/>
-          </Link>
-        ))
+          <ProductCard key={data.id} data={data}/>
+        )).slice(0, 10)
       }
+      {/* <div className={styles.moreBtn} style={{display: 'inline-block'}}>더보기</div> */}
     </div>
   );
 }
 
-export default Product;
+export default ProductSlider;

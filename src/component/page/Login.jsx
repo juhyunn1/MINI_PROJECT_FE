@@ -21,7 +21,7 @@ function Login() {
     })
     .then(res => {
       console.log(res);
-      if(res.data.length != 0) // 데이터가 있으면
+      if(res.data.length !== 0) // 데이터가 있으면
         setTemp(res.data[0]); // 해당 데이터 가져옴
     })
     .catch(err => console.log(err))
@@ -31,17 +31,18 @@ function Login() {
     e.preventDefault();
     console.log(email, password, temp);
 
-    if(password == temp.password) {
+    if(temp && password === temp.password) {
       alert('로그인에 성공하였습니다.');
       setLoginState(true); // 로그인된 상태로 변경
       setUserInfo({ // 사용자 정보 저장
         id: temp.id,
         name: temp.name,
         email: temp.email,
-        password: temp.password
       })
       window.location.replace('/'); // 메인화면으로 이동
     }
+    else if(!temp)
+      alert('해당 이메일로 생성된 계정이 없습니다.');
     else
       alert('로그인에 실패하였습니다.');
   }

@@ -16,12 +16,12 @@ function Join() {
     })
     .then(res => {
       console.log(res.data.length);
-      if(res.data.length == 0 && email != '') // 데이터가 없으면
+      if(res.data.length === 0 && email !== '') // 데이터가 없으면
         setCanJoin(true);
       else
         setCanJoin(false);
         
-      console.log(email, canJoin)
+      // console.log(email, canJoin)
     })
     .catch(err => console.log(err))
   }, [email])
@@ -31,7 +31,7 @@ function Join() {
     console.log(name, email, password);
     
     // 조건 주어야 함 >> 이메일로 가입된 데이터 있는지, 칸이 다 채워졌는지
-    if(canJoin && name != '' && email != '' && password != '') {
+    if(canJoin && name !== '' && email !== '' && password !== '') {
       axios.post('http://localhost:3001/users', {
         name: name, 
         email: email,
@@ -45,7 +45,7 @@ function Join() {
       .catch(err => console.log(err))
     }
     else
-      if(name == '' || email == '' || password == '')
+      if(name === '' || email === '' || password === '')
         alert('내용을 입력해 주세요.');
       else if(!canJoin)
         alert('이미 가입된 이메일 입니다.');
