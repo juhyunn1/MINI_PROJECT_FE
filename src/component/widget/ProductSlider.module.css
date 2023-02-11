@@ -4,19 +4,47 @@
   white-space: nowrap; 
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
+  /* position: relative; */
 }
 
 .productSlider::-webkit-scrollbar {
   display: none;
 }
 
+/* .productSlider > a:last-child {
+  position: relative;
+} */
+
 .productSlider > a:last-child > div {
+  width: 48%;
   /* height: 100%; */
   margin: 0;
-  /* background-color: var(--gray-150); */
+  padding-top: 48%;
+  background-color: var(--gray-150);
+  position: relative;
 }
 
-/* .productSlider > a:last-child > div img {
-  width: 25px;
-  border: 0;
-} */
+.moreCard {
+  width: 48%;
+  height: 100%;
+  display: inline-block;
+}
+
+.moreCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreCardContent > ion-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--font);
+}
+
+.moreCardContent > div {
+  font-size: 0.9rem;
+  line-height: 2rem;
+
+}

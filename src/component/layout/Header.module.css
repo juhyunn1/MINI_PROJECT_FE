@@ -18,11 +18,12 @@
   display: none;
 }
 
-.menu {
+.navBtn {
+  width: 30px;
   height: 30px;
 }
 
-.menu ion-icon {
+.navBtn ion-icon {
   width: 30px;
   height: 30px;
   color: var(--yellow);

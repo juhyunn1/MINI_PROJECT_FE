@@ -219,6 +219,72 @@
       "category": "크래커",
       "brand": "롯데제과",
       "rating": 4.8
+    },
+    {
+      "id": 21,
+      "name": "[린트]엑설런스 다크 99% 50g",
+      "thumbnail": "https://sitem.ssgcdn.com/50/75/43/item/1000029437550_i1_1100.jpg",
+      "price": 6860,
+      "discount": 0,
+      "description": "LINDT&SPRUNGLI SAS / (주)농심 / 서울특별시 동작구 여의대방로112(신대방동) (제조국 : 상세설명참조)",
+      "category": "초콜릿",
+      "brand": "(주)농심",
+      "rating": 4.8
+    },
+    {
+      "id": 22,
+      "name": "농심 감튀 레드칠리맛 60g",
+      "thumbnail": "https://sitem.ssgcdn.com/42/65/20/item/1000059206542_i1_1100.jpg",
+      "price": 1360,
+      "discount": 0,
+      "description": "(주)농심, 서울 동작구 여의대방로112(신대방동)",
+      "category": "과자(유처리제품)",
+      "brand": "(주)농심, 서울 동작구 여의대방로112(신대방동)",
+      "rating": 4.8
+    },
+    {
+      "id": 23,
+      "name": "게이샤 헤이즐넛 필링 밀크 초콜릿 150g",
+      "thumbnail": "https://sitem.ssgcdn.com/17/24/06/item/1000262062417_i1_550.jpg",
+      "price": 6380,
+      "discount": 0,
+      "description": "파제르 헤이즐넛필링 밀크초콜릿 150g",
+      "category": "초콜릿가공품",
+      "brand": "FAZER(핀란드)/(주)영남코프레이션 (제조국 : 핀란드)",
+      "rating": 4.8
+    },
+    {
+      "id": 24,
+      "name": "농심 조청유과 96g",
+      "thumbnail": "https://sitem.ssgcdn.com/44/20/83/item/1000020832044_i1_1100.jpg",
+      "price": 1360,
+      "discount": 0,
+      "description": "(주)농심 / 서울특별시 동작구 여의대방로 112(신대방동)",
+      "category": "과자(유탕처리제품)",
+      "brand": "(주)농심",
+      "rating": 4.9
+    },
+    {
+      "id": 25,
+      "name": "허쉬 다크초콜릿 아사이&블루베리 210g",
+      "thumbnail": "https://sitem.ssgcdn.com/90/11/54/item/1000270541190_i1_1100.jpg",
+      "price": 9080,
+      "discount": 0,
+      "description": "허쉬 다크초콜릿 아사이&블루베리210g, 초콜릿가공품",
+      "category": "초콜릿",
+      "brand": "HERSHEY CANADA INC (제조국 : 캐나다)",
+      "rating": 4.8
+    },
+    {
+      "id": 26,
+      "name": "[린트]엑설런스 다크 99% 50g",
+      "thumbnail": "https://sitem.ssgcdn.com/50/75/43/item/1000029437550_i1_1100.jpg",
+      "price": 6860,
+      "discount": 0,
+      "description": "LINDT&SPRUNGLI SAS / (주)농심 / 서울특별시 동작구 여의대방로112(신대방동) (제조국 : 상세설명참조)",
+      "category": "초콜릿",
+      "brand": "(주)농심",
+      "rating": 4.8
     }
   ],
   "events": [

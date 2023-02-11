@@ -7,11 +7,10 @@ function Title({title='default', isView=true, needsBtn=false, link=''}) {
     return null; // 렌더링 X
   
   return (
-    <div class='spread' style={{marginBottom: '20px'}}>
+    <div class='spread' style={{marginBottom: '10px'}}>
       <h1 className={styles.pageTitle}>{title}</h1>
       {
-        needsBtn
-        ? (
+        needsBtn ? (
           <Link to={link} className={styles.moreBtn}>
             <span>전체보기</span>
             <img src='./assets/images/icon/more.png' alt='more'/>

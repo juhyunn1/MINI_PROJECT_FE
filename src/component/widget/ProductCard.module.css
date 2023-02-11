@@ -15,9 +15,11 @@
   white-space: normal;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.productCard > div > img {
+.normalCard > img {
   width: 100%;
   /* background-color: var(--gray-150); */
   border: 1px solid var(--border);
@@ -26,10 +28,24 @@
   display: block;
 }
 
-/* .imgWrap img:last-child {
-  width: 25px;
-  border-color: var(--gray-150);
-}  */
+.moreCard {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.moreCard > ion-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--font);
+}
+
+.moreCard > div {
+  font-size: 0.9rem;
+  line-height: 2rem;
+}
 
 .productCard .productCardTitle {
   margin: 16px 0 8px 0;

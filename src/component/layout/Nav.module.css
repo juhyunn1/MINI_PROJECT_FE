@@ -1,0 +1,24 @@
+#menuList {
+  width: 100vw;
+  /* height: 100vh; */
+  height: calc(100vh - var(--header-height));
+  background-color: white;
+  /* opacity: 0.2; */
+  /* margin: 0; */
+  margin: var(--header-height) 0 0 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: 0.2s;
+}
+
+.open {
+  overflow: scroll;
+  right: 0;
+  left: 0;
+}
+
+.close {
+  left: 100vw;
+  right: -100vw;
+}

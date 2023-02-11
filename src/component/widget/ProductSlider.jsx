@@ -17,14 +17,20 @@ function ProductSlider() {
   // console.log(productData)
 
   return (
-    <div className={styles.productSlider}>
+    <section className={styles.productSlider}>
       {
         productData && productData.map( data => (
           <ProductCard key={data.id} data={data}/>
         )).slice(0, 10)
       }
-      {/* <div className={styles.moreBtn} style={{display: 'inline-block'}}>더보기</div> */}
-    </div>
+      <ProductCard/>
+      {/* <div className={styles.moreCard}>
+        <div className={styles.moreCardContent}>
+          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          <div>상품 더보기</div>
+        </div>
+      </div> */}
+    </section>
   );
 }
 

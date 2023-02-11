@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from '../ui/Title';
+import AppDownload from '../widget/AppDownlad';
 import EventSlider from '../widget/EventSlider';
 import ProductSlider from '../widget/ProductSlider';
 
@@ -12,6 +13,8 @@ function Main() {
 
         <Title title='상품' needsBtn={true} link='/product'/>
         <ProductSlider/>
+
+        <AppDownload/>
       </div>
     </div>
   );

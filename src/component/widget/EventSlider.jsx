@@ -31,7 +31,7 @@ function EventSlider() {
   };
 
   return (
-    <div className={styles.sliderWrap}>
+    <section className={styles.eventSliderWrap}>
       {/* <img src='./assets/images/icon/event.png' alt='event'/> */}
       <Slider {...settings} dotsClass='dotColor' className={styles.eventSlider}>
         {
@@ -42,7 +42,7 @@ function EventSlider() {
           ))
         }
       </Slider>
-    </div>
+    </section>
   );
 }
 
