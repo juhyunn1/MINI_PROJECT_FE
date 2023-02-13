@@ -22,7 +22,9 @@ function ProductCard({data}) {
             )
             : (
               <div className={styles.normalCard}>
-                <img src={imgSrc} alt={imgAlt}/>
+                <div>
+                  <img src={imgSrc} alt={imgAlt}/>
+                </div>
                 <div className={styles.productCardTitle}>{name}</div>
                 <div className={styles.productCardPrice}>{price}</div>
               </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Title from '../ui/Title';
 
 function Join() {
   const [name, setName] = useState('');
@@ -52,18 +53,21 @@ function Join() {
   }
 
   return (
-    <div class='container'>
-      <form>
-        <div>이름</div>
-        <input type='text' value={name} onChange={(e) => setName(e.currentTarget.value)}/>
+    <div className='container center flex-col'>
+      <Title title='회원가입'/>
+      <form className='box'>
+        <div className='boxLabel'>이름</div>
+        <input className='boxInput mb-16' type='text' value={name} onChange={(e) => setName(e.currentTarget.value)}/>
 
-        <div>이메일</div>
-        <input type='email' value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
+        <div className='boxLabel'>이메일</div>
+        <input className='boxInput mb-16' type='email' value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
 
-        <div>비밀번호</div>
-        <input type='password' value={password} onChange={(e) => setPassword(e.currentTarget.value)}/>
+        <div className='boxLabel'>비밀번호</div>
+        <input className='boxInput' type='password' value={password} onChange={(e) => setPassword(e.currentTarget.value)}/>
+        
+        <div style={{height: 'calc(100% - 259px'}}></div>
 
-        <div onClick={handleJoin}>완료</div>
+        <div className='button' onClick={handleJoin}>완료</div>
       </form>
     </div>
 

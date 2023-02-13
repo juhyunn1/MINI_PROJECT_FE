@@ -1,3 +1,9 @@
+.headerColorChange {
+  background-color: white;
+  opacity: 1;
+  transition: 0.5s;
+}
+
 .logo {
   width: calc(100% - 30px);
   margin-left: 30px;
@@ -23,8 +29,7 @@
   height: 30px;
 }
 
-.navBtn ion-icon {
+.navBtn img {
   width: 30px;
   height: 30px;
-  color: var(--yellow);
 }

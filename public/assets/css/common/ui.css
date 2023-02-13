@@ -1,0 +1,73 @@
+.container {
+  width: 100%;
+  /* height: calc(100% - var(--header-height)); */
+  height: 100%; /* 모바일만 */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  overflow: auto;
+}
+
+.list {
+  width: 100%;
+  /* margin-bottom: 60px; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  column-gap: 16px;
+}
+
+.box {
+  max-width: calc(var(--device-s) / 2);
+  width: 80%;
+  height: 40vh;
+  padding: 20px;
+  background-color: white;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.box > .boxLabel {
+  height: 25px;
+  font-size: 0.8rem;
+  line-height: 25px;
+}
+
+.box > .boxInput {
+  width: 100%;
+  height: 38px;
+  padding: 0 16px;
+  line-height: 38px;
+  background-color: white;
+  font-size: 14px;
+  color: black;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  /* transition: 0.5s; */
+}
+
+.button {
+  width: 100%;
+  height: 38px;
+  /* margin-bottom: 16px; */
+  line-height: 38px;
+  background-color: var(--yellow);
+  font-size: 14px;
+  color: var(--font);
+  text-align: center;
+  border-radius: 16px;
+  /* border: 1px solid var(--border); */
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button:hover {
+  color: white;
+  transition: 0.5s;
+  /* transform: scale(0.99, 0.95) */
+}

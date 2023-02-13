@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { userInfo } from '../../state/userInfo';
 import { loginState } from '../../state/loginState';
+import { useNavigate } from 'react-router-dom';
+import Title from '../ui/Title';
 
 function ChangePassword() {
   const [oldPassword, setOldPassword] = useState('');
@@ -14,6 +16,8 @@ function ChangePassword() {
   const setLoginState = useSetRecoilState(loginState);
   const setUserInfo = useSetRecoilState(userInfo);
   // console.log(email)
+
+  const navigate = useNavigate();
   
   useEffect(() => {
     axios.get('http://localhost:3001/users', { // email로 가입된 데이터 가져와서
@@ -63,15 +67,19 @@ function ChangePassword() {
   }
 
   return (
-    <div class='container'>
-      <form>
-        <div>기존 비밀번호</div>
-        <input type='password' value={temp} onChange={(e) => setTemp(e.currentTarget.value)}/>
+    <div className='container center flex-col'>
+      <Title title='비밀번호 변경'/>
+      <form className='box'>
+        <div className='boxLabel'>기존 비밀번호</div>
+        <input className='boxInput mb-16' type='password' value={temp} onChange={(e) => setTemp(e.currentTarget.value)}/>
 
-        <div>변경할 비밀번호</div>
-        <input type='password' value={newPassword} onChange={(e) => setNewPassword(e.currentTarget.value)}/>
+        <div className='boxLabel'>변경할 비밀번호</div>
+        <input className='boxInput' type='password' value={newPassword} onChange={(e) => setNewPassword(e.currentTarget.value)}/>
 
-        <div onClick={handleChange}>완료</div>
+        <div style={{height: 'calc(100% - 234px'}}></div>
+
+        <div className='button mb-16' onClick={handleChange}>완료</div>
+        <div className='button' onClick={() => navigate(-1)}>돌아가기</div>
       </form>
     </div>
 

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { loginState } from '../../state/loginState';
 import { userInfo } from '../../state/userInfo';
+import Title from '../ui/Title';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -12,6 +13,8 @@ function Login() {
 
   const setLoginState = useSetRecoilState(loginState);
   const setUserInfo = useSetRecoilState(userInfo);
+
+  const navgiate = useNavigate();
   
   useEffect(() => {
     axios.get('http://localhost:3001/users', { // email로 가입된 데이터 가져와서
@@ -48,16 +51,19 @@ function Login() {
   }
 
   return (
-    <div class='container'>
-      <form>
-        <div>이메일</div>
-        <input type='email' value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
+    <div className='container center flex-col'>
+      <Title title='로그인'/>
+      <form className='box'>
+        <div className='boxLabel'>이메일</div>
+        <input className='boxInput mb-16' type='email' value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
 
-        <div>비밀번호</div>
-        <input type='password' value={password} onChange={(e) => setPassword(e.currentTarget.value)}/>
+        <div className='boxLabel'>비밀번호</div>
+        <input className='boxInput' type='password' value={password} onChange={(e) => setPassword(e.currentTarget.value)}/>
 
-        <div onClick={handleLogin}>로그인</div>
-        <Link to='/join'><div>회원가입</div></Link>
+        <div style={{height: 'calc(100% - 234px'}}></div>
+
+        <div className='button mb-16' onClick={handleLogin}>로그인</div>
+        <div className='button' onClick={() => navgiate('/join')}>회원가입</div>
       </form>
     </div>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ProductMain from '../ui/ProductMain';
 
 function Product() {
   const { productId } = useParams(); // 주소의 파라미터 사용
@@ -17,7 +18,13 @@ function Product() {
   }, [productId]);
 
   return (
-    <>Product</>
+    <div className='container'>
+      {
+        productData && (
+          <ProductMain product={productData}/>
+        )
+      }
+    </div>
   );
 }
 

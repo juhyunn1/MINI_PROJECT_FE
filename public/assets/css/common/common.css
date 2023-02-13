@@ -1,3 +1,7 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 html {
   height: 100%;
   margin: 0;
@@ -48,26 +52,20 @@ header {
   position: fixed;
   top: 0;
   z-index: 99;
+  transition: 0.5s;
 }
 
 section {
   margin-bottom: 40px;
 }
 
-.container {
-  width: 100%;
-  /* height: calc(100% - var(--header-height)); */
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
 a {
   text-decoration: none;
   color: var(--font);
+}
+
+input:focus {
+  outline: 1.5px solid var(--yellow);
 }
 
 .center {
@@ -76,8 +74,13 @@ a {
   align-items: center;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .spread {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+

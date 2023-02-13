@@ -1,0 +1,43 @@
+.mobNavMenu {
+  padding: 16px 32px;
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 8px 24px rgb(0 0 0 / 5%);
+  box-shadow: 0px 8px 24px rgb(0 0 0 / 5%);
+}
+
+.mobNavMenu ion-icon {
+  color: var(--yellow);
+}
+
+.mobNavMenu h1 {
+  width: calc(100% - 52px);
+  padding-left: 8px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cartBadge {
+  width: 16px;
+  height: 16px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--red);
+  text-align: center;
+  line-height: 0.9rem;
+}
+
+.mobNavMenu img {
+  width: 20px;
+  transform: rotate(90deg);
+}

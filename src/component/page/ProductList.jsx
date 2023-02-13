@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Title from '../ui/Title';
-import ProductCard from '../widget/ProductCard';
+import ProductCard from '../ui/ProductCard';
 import styles from './ProductList.module.css'
 import Paging from '../ui/Paging';
 
@@ -13,15 +13,13 @@ function Product() {
   const cardPerPage = 12; // 페이지 당 카드 수 
   const [firstIdx, setFirstIdx] = useState(1);
   const [lastIdx, setLastIdx] = useState(1);
-  // const firstIdx = (currentPage - 1) * cardPerPage;
-  // const lastIdx = currentPage * cardPerPage;
   const [currentData, setCurrentData] = useState();
 
   useEffect(() => { // 첫 렌더링 때 데이터 가져온다
     axios.get('http://localhost:3001/products')
     .then(res => {
       console.log(res);
-      setProductData(res.data);
+      setProductData(res.data.reverse());
       setTotal(res.data.length);
       // console.log(total)
     })
@@ -41,7 +39,7 @@ function Product() {
   }, [productData, firstIdx, lastIdx]);
 
   return (
-    <div class='container'>
+    <div className='container'>
       <Title title='전체상품'/>
       <div id={styles.productList}>
         {

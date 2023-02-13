@@ -1,0 +1,71 @@
+.cartCard {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+.cartCard > a {
+  width: 40%;
+  display: block;
+}
+
+.cartCard img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.context {
+  width: 60%;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete > ion-icon {
+  color: var(--gray);
+  margin-left: auto;
+}
+.delete > ion-icon:hover {
+  color: var(--yellow);
+}
+
+.context > h2 {
+  font-size: 0.9rem;
+}
+
+.context > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.context > div > p:first-child {
+  font-weight: bold;
+  color: var(--price);
+  line-height: 1rem;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+}
+
+.count > p {
+  line-height: 1rem;
+  margin: 0 4px;
+}
+
+.count > ion-icon {
+  color: var(--font);
+}
+.count > ion-icon:hover {
+  color: var(--yellow);
+}

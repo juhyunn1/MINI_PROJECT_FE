@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from './ProductCard';
-import styles from './ProductSlider.module.css'
+import ProductCard from '../ui/ProductCard';
+import styles from './ProductSlider.module.css';
+
 function ProductSlider() {
   const [productData, setProductData] = useState();
 
@@ -9,12 +10,13 @@ function ProductSlider() {
     axios.get('http://localhost:3001/products')
     .then(res => {
       console.log(res);
-      setProductData(res.data);
+      setProductData(res.data.reverse()); // 최신순으로 정렬
     })
     .catch(err => console.log(err))
   }, []);
 
-  // console.log(productData)
+  // if(productData)
+  //   console.log(productData.reverse())
 
   return (
     <section className={styles.productSlider}>
@@ -24,12 +26,6 @@ function ProductSlider() {
         )).slice(0, 10)
       }
       <ProductCard/>
-      {/* <div className={styles.moreCard}>
-        <div className={styles.moreCardContent}>
-          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-          <div>상품 더보기</div>
-        </div>
-      </div> */}
     </section>
   );
 }

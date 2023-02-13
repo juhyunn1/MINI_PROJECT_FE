@@ -1,55 +1,47 @@
-// import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { userInfo } from '../../state/userInfo';
+import CartCard from '../ui/CartCard';
+import Title from '../ui/Title';
+import { cartCountState } from '../../state/cartCountState';
 
-// function Cart() {
-//   return (
-//     <>Cart</>
-//   );
-// }
-
-// export default Cart;
-
-
-import React, { useState, useEffect } from 'react';
-
-const Cart = (props) => {
-  // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, header } = props;
-
-  // 현재 트랜지션 효과를 보여주고 있는 중이라는 상태 값
-  const [animate, setAnimate] = useState(false);
-  // 실제 컴포넌트가 사라지는 시점을 지연시키기 위한 값
-  const [visible, setVisible] = useState(open);
+function Cart() {
+  const user = useRecoilValue(userInfo);
+  const [cartData, setCartData] = useState([]);
+  const [isChanged, setIsChanged] = useState(false); // 데이터 변경 감지
+  const setCartCount = useSetRecoilState(cartCountState);
+  let cartQty = 0;
 
   useEffect(() => {
-    // open 값이 true -> false 가 되는 것을 감지 (즉, 모달창을 닫을 때)
-    if (visible && !open) {
-      setAnimate(true);
-      setTimeout(() => setAnimate(false), 250);
+    axios.get(`http://localhost:3001/carts?userId=${user.id}`)
+    .then(res => {
+      console.log(res);
+      setCartData(res.data.reverse()); // 최신순으로 정렬
+      setIsChanged(false) // 다음 변경을 위해 다시 false로
+    })
+    .catch(err => console.log(err))
+  }, [user.id, isChanged]);
+  
+  if(cartData)
+    for(let data of cartData) {
+      console.log(data.qty);
+      cartQty += data.qty;
     }
-    setAnimate(open);
-  }, [visible, open]);
-
-  if (!animate && !visible) return null;
+    setCartCount(cartQty);
 
   return (
-    // 모달의 open close클래스로 css animation을 구현
-    <div className={open ? 'modal open' : 'modal close'}>
-      <section>
-        <header>
-          {header}
-          <button className="close" onClick={close}>
-            &times;
-          </button>
-        </header>
-        <main>{props.children}</main>
-        <footer>
-          <button className="close" onClick={close}>
-            close
-          </button>
-        </footer>
-      </section>
+    <div className='container'>
+      <Title title='장바구니'/>
+      <div className='list'>
+        {
+          cartData && cartData.map( data => (
+            <CartCard key={data.id} data={data} setIsChanged={setIsChanged}/>
+          ))
+        }
+      </div>
     </div>
   );
-};
+}
 
 export default Cart;

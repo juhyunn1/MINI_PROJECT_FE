@@ -2,7 +2,7 @@
   width: 48%;
   height: auto;
   /* border: 1px solid var(--border); */
-  border-radius: 20px;
+  border-radius: 16px;
   margin-right: 4%;
   /* margin: 2%; */
   display: inline-block;
@@ -19,13 +19,23 @@
   align-items: center;
 }
 
-.normalCard > img {
+.normalCard > div:first-child {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.normalCard img {
   width: 100%;
   /* background-color: var(--gray-150); */
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 16px;
+  /* box-shadow: 0px 8px 8px rgb(0 0 0 / 2%); */
   box-sizing: border-box;
   display: block;
+  transition: 0.5s;
+}
+.normalCard img:hover {
+  transform: scale(1.1);
 }
 
 .moreCard {

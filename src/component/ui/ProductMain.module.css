@@ -1,0 +1,26 @@
+.title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--font);
+  border-bottom: 2px solid var(--font);
+  padding-bottom: 18px;
+}
+
+.title p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--price);
+  margin: 16px 0 0 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--discription);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.image {
+  width: 100%;
+  border-radius: 16px;
+}

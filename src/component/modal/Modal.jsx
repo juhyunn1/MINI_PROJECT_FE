@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import styles from './Modal.module.css';
 
 const Modal = ({isOpen=false, setIsOpen=() => console.log('함수 없음'), title='제목'}) => {

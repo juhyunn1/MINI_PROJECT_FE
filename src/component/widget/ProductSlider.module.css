@@ -11,16 +11,14 @@
   display: none;
 }
 
-/* .productSlider > a:last-child {
-  position: relative;
-} */
-
 .productSlider > a:last-child > div {
   width: 48%;
   /* height: 100%; */
   margin: 0;
   padding-top: 48%;
   background-color: var(--gray-150);
+  /* border: 1px solid var(--border); */
+  /* box-shadow: 0px 8px 8px rgb(0 0 0 / 2%); */
   position: relative;
 }
 

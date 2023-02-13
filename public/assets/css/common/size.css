@@ -1,7 +1,7 @@
 :root {
+  --device-s: 768px;
+
   /* header */
   --header-height: 90px;
 
-  /* event */
-  --eventSlider-height: 50px
 }

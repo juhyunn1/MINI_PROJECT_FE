@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { loginState } from '../../state/loginState';
 import { userInfo } from '../../state/userInfo';
-import Modal from '../modal/Modal';
+import Title from '../ui/Title';
 
 function Profile() {
   const user = useRecoilValue(userInfo);
@@ -34,15 +34,20 @@ function Profile() {
   }
 
   return (
-    <div class='container'>
-      <div>이름 : {user.name}</div>
-      <div>이메일 : {user.email}</div>
+    <div className='container center flex-col'>
+      <Title title='프로필'/>
+      <div className='box'>
+        <div className='boxLabel' style={{fontSize: '1rem'}}>이름 : {user.name}</div>
+        <div className='boxLabel' style={{fontSize: '1rem'}}>이메일 : {user.email}</div>
 
-      <div onClick={handleLogout}>로그아웃</div>
-      
-      <Link to='/password-change'><div>비밀번호 변경</div></Link>
-      {/* <div onClick={handleModal}>모달</div>
-      <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} title='비밀번호 변경'/> */}
+        <div style={{height: 'calc(100% - 142px)'}}></div>
+        <Link to='/password-change'><div className='button mb-16'>비밀번호 변경</div></Link>
+        
+        <div className='button' onClick={handleLogout}>로그아웃</div>
+        
+        {/* <div onClick={handleModal}>모달</div>
+        <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} title='비밀번호 변경'/> */}
+      </div>
     </div>
   );
 }

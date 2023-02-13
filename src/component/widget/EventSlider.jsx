@@ -13,7 +13,7 @@ function EventSlider() {
     axios.get('http://localhost:3001/events')
     .then(res => {
       console.log(res);
-      setEventData(res.data);
+      setEventData(res.data.reverse()); // 최신순으로 정렬
     })
     .catch(err => console.log(err))
   }, []);
