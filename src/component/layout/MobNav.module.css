@@ -1,5 +1,5 @@
 #mobNav {
-  width: 100vw;
+  width: 350px;
   /* height: 100vh; */
   height: calc(100vh - var(--header-height));
   background-color: white;
@@ -36,12 +36,21 @@
 }
 
 .open {
-  overflow: scroll;
   right: 0;
-  left: 0;
 }
 
 .close {
   left: 100vw;
   right: -100vw;
+}
+
+@media screen and (max-width: 768px) {
+  #mobNav {
+    width: 100vw;
+  }
+
+  .open {
+    right: 0;
+    left: 0;
+  }
 }

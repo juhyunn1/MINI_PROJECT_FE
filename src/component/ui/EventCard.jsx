@@ -6,7 +6,9 @@ function EventCard({data}) {
   return (
     <Link to={`/event/${data.id}`}>
       <div className={styles.eventCard}>
-        <img src={data.thumbnail} alt={data.name}/>
+        <div>
+          <img src={data.thumbnail} alt={data.name}/>
+        </div>
         <p>
           <span>{data.name}</span><br/><span>{data.startDate} ~ {data.endDate}</span>
         </p>

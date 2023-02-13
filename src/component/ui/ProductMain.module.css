@@ -1,8 +1,22 @@
+.wrap {
+  display: flex;
+  column-gap: 32px;
+}
+
+.image {
+  width: 55%;
+  border-radius: 16px;
+}
+
+.context {
+  width: 45%;
+}
+
 .title {
   font-size: 1.15rem;
   font-weight: bold;
   color: var(--font);
-  border-bottom: 2px solid var(--font);
+  border-bottom: 1px solid var(--description);
   padding-bottom: 18px;
 }
 
@@ -20,7 +34,17 @@
   line-height: 1.6;
 }
 
-.image {
-  width: 100%;
-  border-radius: 16px;
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    display: block;
+  }
+  
+  .image {
+    width: 100%;
+  }
+  
+  .context {
+    width: 100%;
+  }
 }

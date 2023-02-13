@@ -11,5 +11,7 @@
   --price: #f95a00;
 
     /* ProductMain */
-    --description: #666;
+    --description: #999;
+
+    --footer-bg: #f4f4f4;
 }

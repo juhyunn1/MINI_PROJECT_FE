@@ -1,8 +1,11 @@
-.eventSliderWrap > div {
-  width: 100%;
+.eventSlider {
+  max-width: 1024px;
+  width: 85%;
   /* border-radius: 16x; */
+  margin: 0 auto;
   background-color: rgba(0, 0, 0, 0) !important;
   /* margin-bottom: 40px; */
+  
 }
 
 .eventSlider > div {
@@ -19,14 +22,16 @@
   height: 15px;
 } */
 
-.eventSlider {
-  width: 100%;
-}
-
 .eventSlider > button {
   display: none !important;
 }
 
 .eventSlider img {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .eventSlider {
+    width: 100%;
+  }
 }

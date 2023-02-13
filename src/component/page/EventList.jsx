@@ -3,7 +3,7 @@ import axios from 'axios';
 import Title from '../ui/Title';
 import EventCard from '../ui/EventCard';
 
-function EventList() {
+const EventList = () => {
   const [eventData, setEventData] = useState();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function EventList() {
 	
   return (
     <div className='container'>
-      <Title title='이벤트'/>
+      <Title title='이벤트' discription='이마트24의 다양한 이벤트에 참여해보세요.'/>
       <div className='list'>
         {
           eventData && eventData.map( data => (

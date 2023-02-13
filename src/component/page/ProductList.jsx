@@ -40,7 +40,7 @@ function Product() {
 
   return (
     <div className='container'>
-      <Title title='전체상품'/>
+      <Title title='행사상품' discription='이마트24가 준비한 이달의 행사상품을 만나보세요.'/>
       <div id={styles.productList}>
         {
           currentData && currentData.map( data => (

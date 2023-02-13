@@ -1,14 +1,20 @@
 #productList {
-  min-height: calc(100% - 170px);
+  min-height: calc(100% - 271px);
   padding-bottom: 20px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
 }
 
 #productList > a > div {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #productList {
+    min-height: calc(100% - 182px);
+    grid-template-columns: 1fr 1fr;
+  }
 }

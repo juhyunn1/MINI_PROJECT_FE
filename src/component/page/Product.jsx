@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ProductMain from '../ui/ProductMain';
+import Title from '../ui/Title';
 
 function Product() {
   const { productId } = useParams(); // 주소의 파라미터 사용
@@ -19,6 +20,7 @@ function Product() {
 
   return (
     <div className='container'>
+      <Title title='행사상품' discription='이마트24가 준비한 이달의 행사상품을 만나보세요.'/>
       {
         productData && (
           <ProductMain product={productData}/>

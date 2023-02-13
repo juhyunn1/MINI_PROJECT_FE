@@ -12,6 +12,7 @@ import Profile from './component/page/Profile';
 import { RecoilRoot } from 'recoil';
 import Event from './component/page/Event';
 import ChangePassword from './component/page/ChangePassword';
+// import './App.css';
 
 function App() {
   return ( // 이 안에 JSX 문법 적용
