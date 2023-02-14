@@ -2,6 +2,7 @@ import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { cartCountState } from '../../state/cartCountState';
 import styles from './MobNavMenu.module.css';
+import arrowUp from '../../assets/images/icons/arrowUp.png';
 
 function MobNavMenu({name}) {
   const cartCount = useRecoilValue(cartCountState); // CartCount atom 상태값 읽어옴
@@ -15,7 +16,7 @@ function MobNavMenu({name}) {
       {
         name === '장바구니' && cartCount !== 0 ? <div className={styles.cartBadge}>{cartCount}</div> : '' // 카트에 상품이 있다면 뱃지 표시
       }
-      <img src='./assets/images/icon/arrowUp.png' alt=''/>
+      <img src={arrowUp} alt=''/>
     </li>
   );
 }

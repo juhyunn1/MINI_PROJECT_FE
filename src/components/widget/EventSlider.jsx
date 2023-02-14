@@ -32,7 +32,7 @@ function EventSlider() {
 
   return (
     <section className={styles.eventSliderWrap}>
-      {/* <img src='./assets/images/icon/event.png' alt='event'/> */}
+      {/* <img src='./assets/images/icons/event.png' alt='event'/> */}
       <Slider {...settings} dotsClass='dotColor' className={styles.eventSlider}>
         {
           eventData && eventData.map( data => (

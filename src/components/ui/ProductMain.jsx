@@ -5,6 +5,8 @@ import { userInfo } from '../../state/userInfo';
 import styles from './ProductMain.module.css';
 import { cartCountState } from '../../state/cartCountState';
 import { loginState } from '../../state/loginState';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function ProductMain({product}) {
   const user = useRecoilValue(userInfo);
@@ -12,6 +14,8 @@ function ProductMain({product}) {
   const [cartData, setCartData] = useState([]);
   const [productQty, setProductQty] = useState(0); // 현재 사용자의 장바구니에 있는 현재 페이지 상품의 qty
   const [cartCount, setCartCount] = useRecoilState(cartCountState); // 장바구니 전체 개수 관리
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`http://localhost:3001/carts?userId=${user.id}&&productId=${product.id}`)
@@ -62,20 +66,43 @@ function ProductMain({product}) {
         .then(res => {
           console.log(res);
           setProductQty(1)
-          // alert('상품이 장바구니에 추가되었습니다.else');
+          // Swal.fire('상품이 장바구니에 추가되었습니다.else');
         })
         .catch(err => console.log(err))
       }
 
       setCartCount(cartCount + 1)
 
-      let willMove = window.confirm('상품이 장바구니에 추가되었습니다.\n장바구니로 이동하시겠습니까?');
-      if(willMove)
-        window.location.replace('/cart');
+      // let willMove = window.confirm('상품이 장바구니에 추가되었습니다.\n장바구니로 이동하시겠습니까?');
+      // if(willMove)
+      //   navigate('/cart');
+
+      Swal.fire({
+        title: '상품이 장바구니에 추가되었습니다.',
+        text: '장바구니로 이동하시겠습니까?',
+        icon: 'warning',
+        
+        showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
+        confirmButtonColor: 'var(--yellow)', // confrim 버튼 색깔 지정
+        cancelButtonColor: '#d33', // cancel 버튼 색깔 지정
+        confirmButtonText: '확인', // confirm 버튼 텍스트 지정
+        cancelButtonText: '취소', // cancel 버튼 텍스트 지정
+        
+        reverseButtons: true, // 버튼 순서 거꾸로
+          
+      })
+      .then (result => { // 만약 Promise 리턴을 받으면
+        if (result.isConfirmed) // 만약 모달창에서 confirm 버튼을 눌렀다면
+          navigate('/cart');
+      });
     }
     else {
-      alert('로그인이 필요합니다.');
-      window.location.replace('/login');
+      Swal.fire({
+        title: '로그인이 필요합니다.',
+        icon: 'warning',
+        confirmButtonColor: 'var(--yellow)'
+      });
+      navigate('/login');
     }
   }
 

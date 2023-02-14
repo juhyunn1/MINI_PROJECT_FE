@@ -5,6 +5,7 @@ import { userInfo } from '../../state/userInfo';
 import { loginState } from '../../state/loginState';
 import { useNavigate } from 'react-router-dom';
 import Title from '../ui/Title';
+import Swal from 'sweetalert2';
 
 function ChangePassword() {
   const [oldPassword, setOldPassword] = useState('');
@@ -46,7 +47,11 @@ function ChangePassword() {
       })
       .then(res => {
         console.log(res);
-        alert('비밀번호가 변경되었습니다.');
+        Swal.fire({
+          title: '비밀번호가 변경되었습니다.',
+          icon: 'success',
+          confirmButtonColor: 'var(--yellow)'
+        });
         
         // 로그아웃 하고
         setLoginState(false);
@@ -55,15 +60,23 @@ function ChangePassword() {
           name: '',
           email: '',
         }); 
-        window.location.replace('/login'); // 로그인 화면으로 이동
+        navigate('/login'); // 로그인 화면으로 이동
       })
       .catch(err => console.log(err))
     }
     else
       if(temp === '' || newPassword === '')
-        alert('내용을 입력해 주세요.');
+        Swal.fire({
+          title: '내용을 입력해 주세요.',
+          icon: 'warning',
+          confirmButtonColor: 'var(--yellow)'
+        });
       else if(oldPassword !== temp)
-        alert('비밀번호가 틀렸습니다.');
+        Swal.fire({
+          title: '비밀번호가 틀렸습니다.',
+          icon: 'warning',
+          confirmButtonColor: 'var(--yellow)'
+        });
   }
 
   return (

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Title from '../ui/Title';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function Join() {
   const [name, setName] = useState('');
@@ -8,6 +10,8 @@ function Join() {
   const [password, setPassword] = useState('');
   
   const [canJoin, setCanJoin] = useState(false); // 회원가입 가능 여부
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:3001/users', { // email로 가입된 데이터 가져와서
@@ -40,16 +44,28 @@ function Join() {
       })
       .then(res => {
         console.log(res);
-        alert('회원가입이 완료 되었습니다.');
-        window.location.replace('/login'); // 로그인 화면으로 이동
+        Swal.fire({
+          title: '회원가입이 완료 되었습니다.',
+          icon: 'success',
+          confirmButtonColor: 'var(--yellow)'
+        });
+        navigate('/login'); // 로그인 화면으로 이동
       })
       .catch(err => console.log(err))
     }
     else
       if(name === '' || email === '' || password === '')
-        alert('내용을 입력해 주세요.');
+      Swal.fire({
+        title: '내용을 입력해주세요.',
+        icon: 'warning',
+        confirmButtonColor: 'var(--yellow)'
+      });
       else if(!canJoin)
-        alert('이미 가입된 이메일 입니다.');
+        Swal.fire({
+          title: '이미 가입된 이메일 입니다.',
+          icon: 'warning',
+          confirmButtonColor: 'var(--yellow)'
+        });
   }
 
   return (

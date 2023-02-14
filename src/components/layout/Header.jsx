@@ -5,12 +5,12 @@ import { loginState } from '../../state/loginState';
 import styles from "./Header.module.css"
 import MobNav from './MobNav';
 import navMenuData from "../../data/navMenuData";
-import { cartCountState } from '../../state/cartCountState';
+import logo from '../../assets/images/logo.png';
+import menuBar from '../../assets/images/icons/menuBar.png';
+import close from '../../assets/images/icons/close.png';
 
 function Header() {
   const isLoggedin = useRecoilValue(loginState);
-  const cartCount = useRecoilValue(cartCountState);
-  const [idx, setIdx] = useState(0);
   const [startIdx, setStartIdx] = useState(0);
   const [endIdx, setEndIdx] = useState(0);
 
@@ -45,39 +45,13 @@ function Header() {
 
         <div className={styles.logo} onClick={() => setIsNavOpen(false)}>
           <Link to="/">
-            <img src='./assets/images/logo.png' alt="emart24 logo"/>
+            <img src={logo} alt="emart24 logo"/>
             <h1>이마트 24</h1> {/* h1 태그는 있으면 좋다, css로 텍스트 숨김 */}
           </Link>
         </div>
 
         {/* 데스크탑 */}
         <ul className={styles.menu}>
-          {/* {
-            navMenuData && (
-              <Link to={navMenuData[idx].link}>
-                <li>{navMenuData[idx].name}</li>
-              </Link>
-            )
-          }
-          
-          {
-            navMenuData && navMenuData.map( data => (
-              <Link to={data.link}>
-                <li>{data.name}</li>
-              </Link>
-            )).slice(2, 4)
-          }
-
-          {
-            isLoggedin ? (
-              <Link to='/cart'>
-                <li>장바구니</li>
-                { cartCount !== 0 ? <div className={styles.cartBadge}>{cartCount}</div> : '' }
-              </Link>
-            )
-            : ''
-          } */}
-
           {
             navMenuData && navMenuData.map( data => (
               <Link to={data.link} key={data.id}>
@@ -89,7 +63,7 @@ function Header() {
 
         {/* 모바일 */}
         <div className={styles.navBtn} onClick={handleNav}>
-          <img src={!isNavOpen ? './assets/images/icon/menuBar.png' : './assets/images/icon/close.png'} alt="navBtn"/>
+          <img src={!isNavOpen ? menuBar : close} alt="navBtn"/>
         </div>
       </div>
     </header>

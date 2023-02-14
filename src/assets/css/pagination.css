@@ -30,19 +30,21 @@
 }
 
 .pagination > li:nth-child(n+2):nth-child(-n+2) {
-  background-image: url('../images/icon/arrowPrev.png');
+  background-image: url('../images/icons/arrowPrev.png');
+  cursor: pointer;
 }
 
 .pagination > li:nth-child(n+2):nth-child(-n+2):active {
-  background-image: url('../images/icon/arrowPrevActive.png');
+  background-image: url('../images/icons/arrowPrevActive.png');
 }
 
 .pagination > li:nth-last-child(2) {
-  background-image: url('../images/icon/arrowNext.png');
+  background-image: url('../images/icons/arrowNext.png');
+  cursor: pointer;
 }
 
 .pagination > li:nth-last-child(2):active {
-  background-image: url('../images/icon/arrowNextActive.png');
+  background-image: url('../images/icons/arrowNextActive.png');
 }
 
 .pagination >  li a {

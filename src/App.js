@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './component/layout/Header';
-import Cart from './component/page/Cart';
-import Footer from './component/layout/Footer';
-import Login from './component/page/Login';
-import Main from './component/page/Main';
-import Product from './component/page/Product';
-import ProductList from './component/page/ProductList';
-import EventList from './component/page/EventList';
-import Join from './component/page/Join';
-import Profile from './component/page/Profile';
+import Header from './components/layout/Header';
+import Cart from './components/pages/Cart';
+import Footer from './components/layout/Footer';
+import Login from './components/pages/Login';
+import Main from './components/pages/Main';
+import Product from './components/pages/Product';
+import ProductList from './components/pages/ProductList';
+import EventList from './components/pages/EventList';
+import Join from './components/pages/Join';
+import Profile from './components/pages/Profile';
 import { RecoilRoot } from 'recoil';
-import Event from './component/page/Event';
-import ChangePassword from './component/page/ChangePassword';
-// import './App.css';
+import Event from './components/pages/Event';
+import ChangePassword from './components/pages/ChangePassword';
+import './App.css';
 
 function App() {
   return ( // 이 안에 JSX 문법 적용

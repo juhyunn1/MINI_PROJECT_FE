@@ -4,6 +4,7 @@ import styles from './CartCard.module.css';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { cartCountState } from '../../state/cartCountState';
+import Swal from 'sweetalert2';
 
 function CartCard({data, setIsChanged}) { // carts 데이터
   const [productData, setProductData] = useState([]);
@@ -23,7 +24,11 @@ function CartCard({data, setIsChanged}) { // carts 데이터
     axios.delete(`http://localhost:3001/carts/${data.id}`)
     .then(res => {
       console.log(res);
-      alert('해당 상품이 장바구니에서 삭제되었습니다.');
+      Swal.fire({
+        title: '해당 상품이 장바구니에서 삭제되었습니다.',
+        icon: 'success',
+        confirmButtonColor: 'var(--yellow)'
+      });
       setIsChanged(true);
       setCartCount(cartCount - data.qty);
     })
@@ -41,7 +46,7 @@ function CartCard({data, setIsChanged}) { // carts 데이터
       })
       .then(res => {
         console.log(res);
-        // alert('상품을 하나 삭제하였습니다.');
+        // Swal.fire('상품을 하나 삭제하였습니다.');
         setProductQty(data.qty - 1); // 현재
         setIsChanged(true);
         setCartCount(cartCount - 1); // 전체
@@ -49,7 +54,11 @@ function CartCard({data, setIsChanged}) { // carts 데이터
       .catch(err => console.log(err))
     }
     else {
-      alert('최소 수량은 1개 입니다.')
+      Swal.fire({
+        title: '최소 수량은 1개 입니다.',
+        icon: 'warning',
+        confirmButtonColor: 'var(--yellow)'
+      });
     }
     
 
@@ -64,7 +73,7 @@ function CartCard({data, setIsChanged}) { // carts 데이터
     })
     .then(res => {
       console.log(res);
-      // alert('상품을 하나 추가하였습니다.');
+      // Swal.fire('상품을 하나 추가하였습니다.');
       setProductQty(data.qty + 1);
       setIsChanged(true);
       setCartCount(cartCount + 1);
