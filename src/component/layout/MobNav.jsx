@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { loginState } from '../../state/loginState';
@@ -11,8 +11,19 @@ const MobNav = ({isOpen, setIsNavOpen}) => {
   const isLoggedin = useRecoilValue(loginState);
   const user = useRecoilValue(userInfo);
   
-  const link = isLoggedin ? '/profile' : '/login';
-  const name = isLoggedin ? '프로필' : '로그인';
+  const [startIdx, setStartIdx] = useState(0);
+  const [endIdx, setEndIdx] = useState(0);
+
+  useEffect(() => {
+    if(isLoggedin) {
+      setStartIdx(1);
+      setEndIdx(navMenuData.length);
+    }
+    else {
+      setStartIdx(0);
+      setEndIdx(navMenuData.length - 2);
+    }
+  }, [isLoggedin])
 
   return (
     <div id={styles.mobNav} className={isOpen ? styles.open : styles.close}>
@@ -22,7 +33,7 @@ const MobNav = ({isOpen, setIsNavOpen}) => {
       </div>
       
       <ul>
-        <Link to={link} onClick={() => setIsNavOpen(false)}>
+        {/* <Link to={link} onClick={() => setIsNavOpen(false)}>
           <MobNavMenu name={name}/>
         </Link>
         {
@@ -39,6 +50,14 @@ const MobNav = ({isOpen, setIsNavOpen}) => {
             </Link>
           )
           : ''
+        } */}
+
+        {
+          navMenuData && navMenuData.map( data => (
+            <Link to={data.link} key={data.id} onClick={() => setIsNavOpen(false)}>
+              <MobNavMenu name={data.name}/>
+            </Link>
+          )).slice(startIdx, endIdx)
         }
       </ul>
     </div>

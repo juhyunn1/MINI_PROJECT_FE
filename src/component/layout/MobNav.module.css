@@ -29,7 +29,6 @@
 }
 
 #mobNav ul {
-  padding: 0;
   display: flex;
   gap: 24px;
   flex-direction: column;

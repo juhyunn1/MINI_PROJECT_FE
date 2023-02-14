@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 124px;
+  position: relative;
+  height: 972px;
+  align-items: center;
+  /* margin-bottom: 160px; */
+}
+
+.background {
+  width: 4092px;
+  height: 953px;
+  right: -6.666vw;
+  transform: translateX(-10%);
+  transition: 0.9s;
+  bottom: 0px;
+  z-index: -1;
+  background: linear-gradient(270deg, #f2f2f2 5.25%, rgba(245, 244, 243, 0.45) 1280px, #fff);
+  border-radius: 0px 256px 64px 0px;
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    height: auto;
+  }
+}

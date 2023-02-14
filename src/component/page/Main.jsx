@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductSliderTitle from '../ui/ProductSliderTitle';
+import AppDownload from '../widget/AppDownload';
 import EventSlider from '../widget/EventSlider';
 import ProductSlider from '../widget/ProductSlider';
 
@@ -14,7 +15,7 @@ function Main() {
         <ProductSlider/>
       </div>
 
-      
+      <AppDownload/>
     </div>
   );
 }

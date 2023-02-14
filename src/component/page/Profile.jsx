@@ -23,24 +23,27 @@ function Profile() {
   // }, [isModalOpen])
 
   const handleLogout = () => {
-    setLoginState(false);
-    setUserInfo({
-      id: -1,
-      name: '',
-      email: '',
-    });
+    let willLogout = window.confirm('로그아웃 하시겠습니까?');
+      if(willLogout) {
+        setLoginState(false);
+        setUserInfo({
+          id: -1,
+          name: '',
+          email: '',
+        });
 
-    window.location.replace('/'); // 메인화면으로 이동
+        window.location.replace('/'); // 메인화면으로 이동
+      }
   }
 
   return (
     <div className='container center flex-col'>
       <Title title='프로필'/>
       <div className='box'>
-        <div className='boxLabel' style={{fontSize: '1rem'}}>이름 : {user.name}</div>
-        <div className='boxLabel' style={{fontSize: '1rem'}}>이메일 : {user.email}</div>
+        <p className='boxLabel' style={{fontSize: '1rem'}}>이름 : {user.name}</p>
+        <p className='boxLabel' style={{fontSize: '1rem'}}>이메일 : {user.email}</p>
 
-        <div style={{height: 'calc(100% - 142px)'}}></div>
+        <div style={{height: 'calc(100% - 190px)'}}></div>
         <Link to='/password-change'><div className='button mb-16'>비밀번호 변경</div></Link>
         
         <div className='button' onClick={handleLogout}>로그아웃</div>

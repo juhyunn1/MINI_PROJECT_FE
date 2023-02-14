@@ -44,8 +44,6 @@ function Login() {
       })
       window.location.replace('/'); // 메인화면으로 이동
     }
-    else if(!temp)
-      alert('해당 이메일로 생성된 계정이 없습니다.');
     else
       alert('로그인에 실패하였습니다.');
   }

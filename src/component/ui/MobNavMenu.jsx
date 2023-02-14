@@ -6,7 +6,7 @@ import styles from './MobNavMenu.module.css';
 function MobNavMenu({name}) {
   const cartCount = useRecoilValue(cartCountState); // CartCount atom 상태값 읽어옴
 
-  const icon = name === '상품' ? 'cube' : name === '이벤트' ? 'gift' : 'cart';
+  const icon = name === '프로필' || name === '로그인' ? 'person' : name === '상품' ? 'cube' : name === '이벤트' ? 'gift' : 'cart';
 
   return (
     <li className={styles.mobNavMenu}>

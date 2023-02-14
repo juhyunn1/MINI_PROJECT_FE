@@ -10,8 +10,9 @@
   --border: #ebebeb;
   --price: #f95a00;
 
-    /* ProductMain */
-    --description: #999;
+  --description: #999;
 
-    --footer-bg: #f4f4f4;
+  --footer-bg: #f4f4f4;
+
+  --scrollbar: #aaa;
 }

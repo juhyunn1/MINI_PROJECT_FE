@@ -26,7 +26,6 @@ function CartCard({data, setIsChanged}) { // carts 데이터
       alert('해당 상품이 장바구니에서 삭제되었습니다.');
       setIsChanged(true);
       setCartCount(cartCount - data.qty);
-      // window.location.replace('/cart');
     })
     .catch(err => console.log(err))
     
@@ -42,9 +41,8 @@ function CartCard({data, setIsChanged}) { // carts 데이터
       })
       .then(res => {
         console.log(res);
-        alert('상품을 하나 삭제하였습니다.');
+        // alert('상품을 하나 삭제하였습니다.');
         setProductQty(data.qty - 1); // 현재
-        // window.location.replace('/cart');
         setIsChanged(true);
         setCartCount(cartCount - 1); // 전체
       })
@@ -66,9 +64,8 @@ function CartCard({data, setIsChanged}) { // carts 데이터
     })
     .then(res => {
       console.log(res);
-      alert('상품을 하나 추가하였습니다.');
+      // alert('상품을 하나 추가하였습니다.');
       setProductQty(data.qty + 1);
-      // window.location.replace('/cart');
       setIsChanged(true);
       setCartCount(cartCount + 1);
     })

@@ -453,34 +453,10 @@
   ],
   "carts": [
     {
-      "id": 1,
-      "productId": 5,
-      "userId": 2,
-      "qty": 9
-    },
-    {
       "id": 2,
       "productId": 6,
       "userId": 3,
       "qty": 1
-    },
-    {
-      "id": 4,
-      "productId": 25,
-      "userId": 2,
-      "qty": 2
-    },
-    {
-      "id": 6,
-      "productId": 23,
-      "userId": 2,
-      "qty": 3
-    },
-    {
-      "productId": 24,
-      "userId": 2,
-      "qty": 1,
-      "id": 8
     }
   ]
 }

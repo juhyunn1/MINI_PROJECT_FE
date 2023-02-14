@@ -65,6 +65,7 @@
 
 .count > ion-icon {
   color: var(--font);
+  cursor: pointer;
 }
 .count > ion-icon:hover {
   color: var(--yellow);
