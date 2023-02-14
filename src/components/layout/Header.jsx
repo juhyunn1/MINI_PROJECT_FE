@@ -8,9 +8,11 @@ import navMenuData from "../../data/navMenuData";
 import logo from '../../assets/images/logo.png';
 import menuBar from '../../assets/images/icons/menuBar.png';
 import close from '../../assets/images/icons/close.png';
+import { cartCountState } from '../../state/cartCountState';
 
 function Header() {
   const isLoggedin = useRecoilValue(loginState);
+  const cartCount = useRecoilValue(cartCountState);
   const [startIdx, setStartIdx] = useState(0);
   const [endIdx, setEndIdx] = useState(0);
 
@@ -56,6 +58,7 @@ function Header() {
             navMenuData && navMenuData.map( data => (
               <Link to={data.link} key={data.id}>
                 <li>{data.name}</li>
+                { data.name === '장바구니' && cartCount !== 0 ? <div className={styles.cartBadge}>{cartCount}</div> : '' }
               </Link>
             )).slice(startIdx, endIdx)
           }

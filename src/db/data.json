@@ -429,7 +429,7 @@
     {
       "name": "a",
       "email": "a@a",
-      "password": "a",
+      "password": "aa",
       "id": 2
     },
     {
@@ -457,6 +457,12 @@
       "productId": 6,
       "userId": 3,
       "qty": 1
+    },
+    {
+      "productId": 24,
+      "userId": 2,
+      "qty": 1,
+      "id": 3
     }
   ]
 }
